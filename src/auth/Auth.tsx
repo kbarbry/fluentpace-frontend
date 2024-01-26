@@ -22,7 +22,8 @@ const Auth: React.FC = () => {
       <Card
         style={{
           boxShadow: '0 16px 32px rgba(0, 0, 0, 0.4)',
-          width: '400px',
+          width: '50%',
+          minWidth: '350px',
           maxWidth: '400px',
           textAlign: 'center'
         }}
