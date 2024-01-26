@@ -1,30 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ConfigProvider, theme } from 'antd'
+import { useAppSelector } from './store/hooks'
+import { EProfile } from './store/slices/user.slice'
+import AppPublic from './AppPublic'
+import AppPrivateStudent from './AppPrivateStudent'
+import AppPrivateTeacher from './AppPrivateTeacher'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const user = useAppSelector((state) => state.userSlice.user)
 
   return (
     <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Welcome to fluentPace</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+      <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+        {user ? (
+          user.profile === EProfile.student ? (
+            <AppPrivateStudent />
+          ) : (
+            <AppPrivateTeacher />
+          )
+        ) : (
+          <AppPublic />
+        )}
+      </ConfigProvider>
     </>
   )
 }
