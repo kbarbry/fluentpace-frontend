@@ -2,6 +2,7 @@ import { Card, Tabs, TabsProps } from 'antd'
 import React from 'react'
 import StudentForm from './components/StudentForm'
 import TeacherForm from './components/TeacherForm'
+import './Auth.css'
 
 const Auth: React.FC = () => {
   const items: TabsProps['items'] = [
@@ -10,24 +11,8 @@ const Auth: React.FC = () => {
   ]
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        height: '100vh'
-      }}
-    >
-      <Card
-        style={{
-          boxShadow: '0 16px 32px rgba(0, 0, 0, 0.4)',
-          width: '50%',
-          minWidth: '350px',
-          maxWidth: '400px',
-          textAlign: 'center'
-        }}
-      >
+    <div className='auth-container'>
+      <Card className='card'>
         <h2>FluentPace</h2>
         Welcome to FluentPace, the place for improving your english and join a
         community of active students and teachers !

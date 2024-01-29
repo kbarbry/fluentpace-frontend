@@ -9,7 +9,14 @@ const App: React.FC = () => {
   const user = useAppSelector((state) => state.userSlice.user)
 
   return (
-    <>
+    <div
+      style={{
+        overflow: 'hidden',
+        position: 'relative',
+        height: '100%',
+        width: '100%'
+      }}
+    >
       <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
         {user ? (
           user.profile === EProfile.student ? (
@@ -21,7 +28,7 @@ const App: React.FC = () => {
           <AppPublic />
         )}
       </ConfigProvider>
-    </>
+    </div>
   )
 }
 
