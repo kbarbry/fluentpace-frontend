@@ -5,16 +5,17 @@ export enum EProfile {
   student = 'student'
 }
 
-interface User {
+interface IUser {
   profile: EProfile
   username: string
+  profilePictureUrl?: string
 }
 
-interface UserState {
-  user: User | null
+interface IUserState {
+  user: IUser | null
 }
 
-const initialState: UserState = {
+const initialState: IUserState = {
   user: null
 }
 
@@ -22,7 +23,13 @@ export const userSlice = createSlice({
   name: 'userSlice',
   initialState,
   reducers: {
-    setUserInfos(state, action: PayloadAction<User>) {
+    setUserInfos(state, action: PayloadAction<IUser | null>) {
+      let user = action.payload
+      if (!user) {
+        state.user = null
+        return
+      }
+      user.profilePictureUrl = '/defaultProfilePicture.svg'
       state.user = action.payload
     }
   }

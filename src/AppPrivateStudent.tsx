@@ -9,6 +9,8 @@ import { Link, Route, Switch } from 'wouter'
 import NotFound from './Error/404'
 import { Content, Header } from 'antd/es/layout/layout'
 import Home from './student/home/home'
+import Courses from './student/courses/courses'
+import Profile from './student/profile/profile'
 
 const AppPrivateStudent: React.FC = () => {
   const items: MenuProps['items'] = [
@@ -91,8 +93,8 @@ const AppPrivateStudent: React.FC = () => {
           >
             <Switch>
               <Route path='/' component={Home} />
-              <Route path='/courses' component={Home} />
-              <Route path='/profile' component={Home} />
+              <Route path='/courses' component={Courses} />
+              <Route path='/profile' component={Profile} />
               <Route component={NotFound} />
             </Switch>
           </div>

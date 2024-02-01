@@ -9,7 +9,8 @@ import { Link, Route, Switch } from 'wouter'
 import NotFound from './Error/404'
 import { Content, Header } from 'antd/es/layout/layout'
 import Home from './teacher/home/home'
-
+import Courses from './teacher/courses/courses'
+import Profile from './teacher/profile/profile'
 const AppPrivateTeacher: React.FC = () => {
   const items: MenuProps['items'] = [
     {
@@ -23,8 +24,8 @@ const AppPrivateTeacher: React.FC = () => {
     },
     {
       label: (
-        <Link href='/corrections'>
-          <a>Corrections</a>
+        <Link href='/courses'>
+          <a>Courses</a>
         </Link>
       ),
       icon: <AiOutlineLaptop />,
@@ -91,8 +92,8 @@ const AppPrivateTeacher: React.FC = () => {
           >
             <Switch>
               <Route path='/' component={Home} />
-              <Route path='/corrections' component={Home} />
-              <Route path='/profile' component={Home} />
+              <Route path='/courses' component={Courses} />
+              <Route path='/profile' component={Profile} />
               <Route component={NotFound} />
             </Switch>
           </div>
