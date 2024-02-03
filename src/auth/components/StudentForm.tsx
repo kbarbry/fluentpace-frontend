@@ -2,8 +2,10 @@ import { Button, Form, Input, Space } from 'antd'
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../store/hooks'
 import { EProfile, setUserInfos } from '../../store/slices/user.slice'
+import { useTranslation } from 'react-i18next'
 
 const StudentForm: React.FC = () => {
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const [username, setUsername] = useState('')
 
@@ -12,7 +14,6 @@ const StudentForm: React.FC = () => {
     try {
       dispatch(setUserInfos({ profile: EProfile.student, username: username }))
     } catch (e) {}
-    console.log('lala')
   }
 
   return (
@@ -20,8 +21,10 @@ const StudentForm: React.FC = () => {
       <Form name='StudentForm' onFinish={handleLogUserClick}>
         <Form.Item
           name='Name'
-          label='Name'
-          rules={[{ required: true, message: 'Name is required' }]}
+          label={t('auth.student.name')}
+          rules={[
+            { required: true, message: t('auth.student.error.name.required') }
+          ]}
         >
           <Input
             placeholder='John Doe'
@@ -31,7 +34,7 @@ const StudentForm: React.FC = () => {
         </Form.Item>
         <Form.Item>
           <Button type='primary' htmlType='submit' block>
-            Login as Student
+            {t('auth.student.login')}
           </Button>
         </Form.Item>
       </Form>

@@ -1,0 +1,15 @@
+.header-app {
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-app {
+  justify-content: center;
+}
+
+.content-app {
+  overflow-y: auto;
+  background-color: #242424;
+  color: #fff;
+  padding: 24px;
+}

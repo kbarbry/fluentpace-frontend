@@ -1,12 +1,34 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/backgroundLogin.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: zoomInOut 10s infinite alternate;
+  filter: blur(3px);
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
 }
 
-.card {
+.card-auth {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
   width: 50%;
   min-width: 350px;
@@ -14,4 +36,21 @@
   text-align: center;
   background-color: rgba(144, 144, 144, 0.1);
   backdrop-filter: blur(10px);
+}
+
+.card-lang {
+  margin-top: 30px;
+  text-align: center;
+  backdrop-filter: blur(0px);
+}
+
+.lang-selector {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  width: 40px;
+  margin: 6px;
+}
+
+.lang-selector:hover {
+  transform: scale(1.1);
 }

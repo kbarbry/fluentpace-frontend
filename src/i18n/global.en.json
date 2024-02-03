@@ -1,0 +1,55 @@
+{
+  "translation": {
+    "auth": {
+      "welcome": "Welcome to FluentPace the place for improving your english and join a community of active students and teacher !",
+      "student": {
+        "title": "Student",
+        "name": "Name",
+        "login": "Login as Student",
+        "error": {
+          "name": {
+            "required": "Name is required"
+          }
+        }
+      },
+      "teacher": {
+        "title": "Teacher",
+        "name": "Name",
+        "login": "Login as Teacher",
+        "error": {
+          "name": {
+            "required": "Name is required"
+          }
+        }
+      }
+    },
+    "app": {
+      "teacher": {
+        "home": {
+          "title": "Home",
+          "welcome": "Welcome {{name}} on the teacher part of the App where you can grade students !"
+        },
+        "courses": {
+          "title": "Courses"
+        },
+        "profile": {
+          "title": "Profile",
+          "logout": "Logout"
+        }
+      },
+      "student": {
+        "home": {
+          "title": "Home",
+          "welcome": "Welcome {{name}} on the student part of the app where you can select courses, make them and a teacher will grade them for you!"
+        },
+        "courses": {
+          "title": "Courses"
+        },
+        "profile": {
+          "title": "Profile",
+          "logout": "Logout"
+        }
+      }
+    }
+  }
+}

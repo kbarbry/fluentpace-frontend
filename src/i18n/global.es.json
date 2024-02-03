@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "auth": {
+      "welcome": "Bienvenido/a a FluentPace, el lugar perfecto para mejorar tú inglés y unirte a una comunidad de estudiantes activos y profesores !",
+      "student": {
+        "title": "Alumno",
+        "name": "Nombre",
+        "login": "Iniciar sesión como estudiante",
+        "error": {
+          "name": {
+            "required": "Se requiere el nombre"
+          }
+        }
+      },
+      "teacher": {
+        "title": "Maestro/a",
+        "name": "Nombre",
+        "login": "Iniciar sesión como profesor/a",
+        "error": {
+          "name": {
+            "required": "Se requiere el nombre"
+          }
+        }
+      }
+    }
+  }
+}

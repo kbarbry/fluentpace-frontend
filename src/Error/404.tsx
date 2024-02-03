@@ -1,5 +1,5 @@
-import { Result, Button } from 'antd'
 import React from 'react'
+import { Result, Button } from 'antd'
 import { useLocation } from 'wouter'
 
 export const NotFound: React.FC = () => {
@@ -10,25 +10,17 @@ export const NotFound: React.FC = () => {
   }
 
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       <Result
         status='404'
         title='404'
-        subTitle='Sorry, the page you visited does not exist.'
+        subTitle='Sorry, the page you visited does not exist, or you reloaded your page and lost your session.'
+        extra={
+          <Button onClick={() => handleGoHome()} type='primary'>
+            Back Home
+          </Button>
+        }
       />
-      <Button
-        type='text'
-        block
-        style={{
-          height: '50px',
-          border: '1px solid #333',
-          borderRadius: '3px',
-          transition: 'background-color 0.3s'
-        }}
-        onClick={() => handleGoHome()}
-      >
-        Go Home
-      </Button>
     </div>
   )
 }

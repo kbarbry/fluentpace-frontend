@@ -1,8 +1,17 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useAppSelector } from '../../store/hooks'
 
 const Home: React.FC = () => {
+  const { t } = useTranslation()
+  const user = useAppSelector((state) => state.userSlice.user)
+
   return (
-    <>Welcom on the teacher part of the App where you can grade students !</>
+    <>
+      {t('app.teacher.home.welcome', {
+        name: user?.username
+      })}
+    </>
   )
 }
 
