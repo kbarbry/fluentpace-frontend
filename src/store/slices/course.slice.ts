@@ -103,3 +103,6 @@ export const coursesSlice = createSlice({
     }
   }
 })
+
+export const { addCourse, removeCourse } = coursesSlice.actions
+export default coursesSlice.reducer

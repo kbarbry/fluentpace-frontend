@@ -12,8 +12,10 @@ const TeacherForm: React.FC = () => {
   const handleLogUserClick = () => {
     if (!username) return
     try {
+      console.log(username)
       dispatch(setUserInfos({ profile: EProfile.teacher, username: username }))
     } catch (e) {}
+    console.log('lala')
   }
 
   return (
@@ -22,9 +24,7 @@ const TeacherForm: React.FC = () => {
         <Form.Item
           name='Name'
           label={t('auth.teacher.name')}
-          rules={[
-            { required: true, message: t('auth.teacher.error.name.required') }
-          ]}
+          rules={[{ required: true, message: 'lala' }]}
         >
           <Input
             placeholder='John Doe'
