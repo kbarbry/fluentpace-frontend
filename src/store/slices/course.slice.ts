@@ -18,9 +18,12 @@ interface IUserAnswer {
 }
 
 interface ICourse {
+  id: string
   title: string
-  videoUrl: string
+  profilePictureUrl: string
+  videoId: string
   creator: string
+  time: number
   questions: IQuestion[]
   answers: IUserAnswer[]
 }
@@ -32,20 +35,13 @@ interface ICourseState {
 const initialState: ICourseState = {
   courses: [
     {
-      title: 'Shadowing: Repeat-After-Me',
-      videoUrl: 'https://www.youtube.com/watch?v=N6fE7ukKyd0',
-      creator: 'Dhaya',
-      answers: [],
-      questions: [
-        { id: 1, title: "What's this shitty accent ?" },
-        { id: 2, title: 'Blabla question 2 ?' },
-        { id: 3, title: 'Blabla question 3 ?' }
-      ]
-    },
-    {
+      id: 'd8iI7KCnnfWDyPrndXqzadTkXeIX3jA',
       title: 'Learn English with podcast conversation',
-      videoUrl: 'https://www.youtube.com/watch?v=TT-mum4QPcw',
+      videoId: 'TT-mum4QPcw',
+      profilePictureUrl:
+        'https://i3.ytimg.com/vi/TT-mum4QPcw/maxresdefault.jpg',
       creator: 'Dhaya',
+      time: 60,
       answers: [],
       questions: [
         { id: 1, title: 'What is he saying ?' },
@@ -54,9 +50,13 @@ const initialState: ICourseState = {
       ]
     },
     {
+      id: 'k4EaAuU6Hvp4B5oxBqfxZ28MjqnaFV1',
       title: 'Learn English with PODCASTS',
-      videoUrl: 'https://www.youtube.com/watch?v=nT6Be1Bqfoc',
+      videoId: 'nT6Be1Bqfoc',
+      profilePictureUrl:
+        'https://i3.ytimg.com/vi/nT6Be1Bqfoc/maxresdefault.jpg',
       creator: 'Dhaya',
+      time: 60,
       answers: [],
       questions: [
         { id: 1, title: 'I like coffee ?' },
@@ -65,9 +65,13 @@ const initialState: ICourseState = {
       ]
     },
     {
+      id: 'neAmiXLERqRyL0vvbSFFw0_1CsOHHrC',
       title: 'SHADOWING English Speaking Practice: talking about marriage',
-      videoUrl: 'https://www.youtube.com/watch?v=kCp4RYiezZc',
+      videoId: 'kCp4RYiezZc',
+      profilePictureUrl:
+        'https://i3.ytimg.com/vi/kCp4RYiezZc/maxresdefault.jpg',
       creator: 'Dhaya',
+      time: 60,
       answers: [],
       questions: [
         { id: 1, title: 'Do you feel great ?' },
@@ -76,12 +80,31 @@ const initialState: ICourseState = {
       ]
     },
     {
+      id: 'KMNZ6djm9vY2ItNNdtQJXFBtTHQmBbD',
       title: 'Shadowing English Practice with Ana de Armas',
-      videoUrl: 'https://www.youtube.com/watch?v=neQHo0ckyUM',
+      videoId: 'neQHo0ckyUM',
+      profilePictureUrl:
+        'https://i3.ytimg.com/vi/neQHo0ckyUM/maxresdefault.jpg',
       creator: 'Dhaya',
+      time: 60,
       answers: [],
       questions: [
         { id: 1, title: 'How you slept this night ?' },
+        { id: 2, title: 'Blabla question 2 ?' },
+        { id: 3, title: 'Blabla question 3 ?' }
+      ]
+    },
+    {
+      id: 'aOarHasWqpjQ_BpCA_GbybllvT3Q75L',
+      title: 'Shadowing: Repeat-After-Me',
+      videoId: 'N6fE7ukKyd0',
+      profilePictureUrl:
+        'https://i3.ytimg.com/vi/N6fE7ukKyd0/maxresdefault.jpg',
+      creator: 'Dhaya',
+      time: 60,
+      answers: [],
+      questions: [
+        { id: 1, title: "What's this shitty accent ?" },
         { id: 2, title: 'Blabla question 2 ?' },
         { id: 3, title: 'Blabla question 3 ?' }
       ]

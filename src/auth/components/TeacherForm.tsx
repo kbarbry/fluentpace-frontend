@@ -12,10 +12,8 @@ const TeacherForm: React.FC = () => {
   const handleLogUserClick = () => {
     if (!username) return
     try {
-      console.log(username)
       dispatch(setUserInfos({ profile: EProfile.teacher, username: username }))
     } catch (e) {}
-    console.log('lala')
   }
 
   return (

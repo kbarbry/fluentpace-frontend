@@ -13,6 +13,7 @@ import Home from './student/home/home'
 import Courses from './student/courses/courses'
 import Profile from './student/profile/profile'
 import './AppPrivate.css'
+import Course from './student/courses/components/course'
 
 const AppPrivateStudent: React.FC = () => {
   const items: MenuProps['items'] = [
@@ -48,6 +49,7 @@ const AppPrivateStudent: React.FC = () => {
         <Switch>
           <Route path='/' component={Home} />
           <Route path='/courses' component={Courses} />
+          <Route path='/courses/:id' component={Course} />
           <Route path='/profile' component={Profile} />
           <Route component={NotFound} />
         </Switch>
