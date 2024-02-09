@@ -12,7 +12,13 @@ const StudentForm: React.FC = () => {
   const handleLogUserClick = () => {
     if (!username) return
     try {
-      dispatch(setUserInfos({ profile: EProfile.student, username: username }))
+      dispatch(
+        setUserInfos({
+          profile: EProfile.student,
+          username: username,
+          courseMade: []
+        })
+      )
     } catch (e) {}
   }
 

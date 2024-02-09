@@ -1,5 +1,20 @@
 {
   "translation": {
+    "global": {
+      "button": {
+        "back": "Back",
+        "yes": "Yes",
+        "no": "No",
+        "submit": "Submit",
+        "leave": "Leave"
+      },
+      "notification": {
+        "success": {
+          "courseSubmitted": "Course submitted",
+          "courseRemovedCompleted": "Course removed"
+        }
+      }
+    },
     "auth": {
       "welcome": "Welcome to FluentPace the place for improving your english and join a community of active students and teacher !",
       "student": {
@@ -43,7 +58,24 @@
           "welcome": "Welcome {{name}} on the student part of the app where you can select courses, make them and a teacher will grade them for you!"
         },
         "courses": {
-          "title": "Courses"
+          "title": "Courses",
+          "available": "Available:",
+          "completed": "Completed:",
+          "nothingCompleted": "No courses completed yet.",
+          "removeCompleted": "Remove course from completed section",
+          "course": {
+            "resources": "Resources:",
+            "questions": "Questions:",
+            "modal": {
+              "leave": {
+                "title": "Leave Course ?",
+                "message": "Are you sure you want to leave this course? Your progress won't be save and you'll have to start it all over again."
+              }
+            },
+            "error": {
+              "notFound": "Course not found."
+            }
+          }
         },
         "profile": {
           "title": "Profile",

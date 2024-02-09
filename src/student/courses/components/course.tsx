@@ -1,18 +1,31 @@
 import React, { useState } from 'react'
-import { Typography, Button, Modal, Space, Divider } from 'antd'
+import { Typography, Button, Modal, Space, Divider, Card } from 'antd'
+//@ts-ignore
+import { VoiceRecorder } from 'react-voice-recorder-player'
 import { useLocation, useParams } from 'wouter'
-import { useAppSelector } from '../../../store/hooks'
+import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { useTranslation } from 'react-i18next'
+import { MessageSuccess } from '../../../notifications/messageSuccess'
+import { addCourseCompleted } from '../../../store/slices/user.slice'
+import { EQuestionType } from '../../../store/slices/course.slice'
+import { Input } from 'antd'
 
+const { TextArea } = Input
 const { Title } = Typography
 
 const Course: React.FC = () => {
   const params = useParams()
+  const { t } = useTranslation()
+  const dispatch = useAppDispatch()
   const [, setLocation] = useLocation()
   const course = useAppSelector((state) =>
     state.courseSlice.courses.find((c) => c.id === params.id)
   )
-
   const [modalVisible, setModalVisible] = useState(false)
+
+  if (!course) {
+    return <div>{t('app.student.courses.course.error.notFound')}</div>
+  }
 
   const handleBack = () => {
     setModalVisible(true)
@@ -27,8 +40,10 @@ const Course: React.FC = () => {
     setModalVisible(false)
   }
 
-  if (!course) {
-    return <div>Course not found</div>
+  const submitClass = () => {
+    dispatch(addCourseCompleted(course.id))
+    MessageSuccess(t('global.notification.success.courseSubmitted'))
+    setLocation('/courses/')
   }
 
   return (
@@ -41,45 +56,85 @@ const Course: React.FC = () => {
           {course.title}
         </Title>
         <Button type='default' onClick={handleBack}>
-          Back
+          {t('global.button.back')}
         </Button>
       </Space>
       <Divider type='horizontal' />
-      <Space
-        direction='vertical'
-        className='max-size'
-        style={{ display: 'flex', justifyItems: 'center' }}
-      >
-        <div style={{ maxWidth: '1000px' }}>
-          <div className='iframe-container'>
-            <iframe
-              src={`https://www.youtube.com/embed/${course.videoId}`}
-              title={`${course.title}`}
-              className='responsive-iframe'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowFullScreen
-            ></iframe>
+      <Space direction='vertical' className='max-size'>
+        <Card className='course-section'>
+          <Title level={4} className='box-title-container'>
+            {t('app.student.courses.course.resources')}
+          </Title>
+          <Divider type='horizontal' />
+          <div className='video-container unselectable'>
+            <div className='iframe-container'>
+              <iframe
+                src={`https://www.youtube.com/embed/${course.videoId}`}
+                title={`${course.title}`}
+                className='responsive-iframe'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
-        </div>
-        <ul>
+        </Card>
+        <Card className='course-section'>
+          <Title level={4} className='box-title-container'>
+            {t('app.student.courses.course.questions')}
+          </Title>
+          <Divider type='horizontal' />
           {course.questions.map((question, index) => (
-            <li key={index}>{question.title}</li>
+            <div className='questions-container' key={index}>
+              <Title level={5} style={{ margin: '0px' }}>
+                {index + 1}. {question.title}
+              </Title>
+              {question.type === EQuestionType.Vocal ? (
+                <div className='recorder-container'>
+                  <VoiceRecorder
+                    width='90%'
+                    height='90%'
+                    downloadable={false}
+                    mainContainerStyle={{
+                      boxShadow: 'none'
+                    }}
+                    controllerContainerStyle={{ backgroundColor: '#4a4a4a' }}
+                  />
+                </div>
+              ) : (
+                <TextArea
+                  className='recorder-container'
+                  rows={4}
+                  maxLength={2000}
+                  showCount
+                />
+              )}
+            </div>
           ))}
-        </ul>
+          <Divider type='horizontal' />
+          <Space
+            direction='horizontal'
+            className='max-size'
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
+            <Button type='primary' onClick={submitClass}>
+              {t('global.button.submit')}
+            </Button>
+            <Button danger onClick={handleBack}>
+              {t('global.button.leave')}
+            </Button>
+          </Space>
+        </Card>
       </Space>
 
       <Modal
-        title='Leave Course'
+        title={t('app.student.courses.course.modal.leave.title')}
         open={modalVisible}
         onOk={handleConfirmLeave}
         onCancel={handleCancelLeave}
-        okText='Yes'
-        cancelText='No'
+        okText={t('global.button.yes')}
+        cancelText={t('global.button.no')}
       >
-        <p>
-          Are you sure you want to leave this course? Your progress won't be
-          save and you'll have to start it all over again.
-        </p>
+        <p>{t('app.student.courses.course.modal.leave.message')}</p>
       </Modal>
     </Space>
   )

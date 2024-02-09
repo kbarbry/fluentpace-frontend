@@ -1,8 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+export enum EQuestionType {
+  Vocal,
+  Text
+}
+
 interface IQuestion {
   id: number
   title: string
+  type: EQuestionType
   imageUrl?: string
 }
 
@@ -44,9 +50,9 @@ const initialState: ICourseState = {
       time: 60,
       answers: [],
       questions: [
-        { id: 1, title: 'What is he saying ?' },
-        { id: 2, title: 'Blabla question 2 ?' },
-        { id: 3, title: 'Blabla question 3 ?' }
+        { id: 1, type: EQuestionType.Vocal, title: 'What is he saying ?' },
+        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
+        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
       ]
     },
     {
@@ -59,9 +65,9 @@ const initialState: ICourseState = {
       time: 60,
       answers: [],
       questions: [
-        { id: 1, title: 'I like coffee ?' },
-        { id: 2, title: 'Blabla question 2 ?' },
-        { id: 3, title: 'Blabla question 3 ?' }
+        { id: 1, type: EQuestionType.Vocal, title: 'I like coffee ?' },
+        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
+        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
       ]
     },
     {
@@ -74,9 +80,9 @@ const initialState: ICourseState = {
       time: 60,
       answers: [],
       questions: [
-        { id: 1, title: 'Do you feel great ?' },
-        { id: 2, title: 'Blabla question 2 ?' },
-        { id: 3, title: 'Blabla question 3 ?' }
+        { id: 1, type: EQuestionType.Vocal, title: 'Do you feel great ?' },
+        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
+        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
       ]
     },
     {
@@ -89,9 +95,13 @@ const initialState: ICourseState = {
       time: 60,
       answers: [],
       questions: [
-        { id: 1, title: 'How you slept this night ?' },
-        { id: 2, title: 'Blabla question 2 ?' },
-        { id: 3, title: 'Blabla question 3 ?' }
+        {
+          id: 1,
+          type: EQuestionType.Vocal,
+          title: 'How you slept this night ?'
+        },
+        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
+        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
       ]
     },
     {
@@ -104,9 +114,13 @@ const initialState: ICourseState = {
       time: 60,
       answers: [],
       questions: [
-        { id: 1, title: "What's this shitty accent ?" },
-        { id: 2, title: 'Blabla question 2 ?' },
-        { id: 3, title: 'Blabla question 3 ?' }
+        {
+          id: 1,
+          type: EQuestionType.Vocal,
+          title: "What's this shitty accent ?"
+        },
+        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
+        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
       ]
     }
   ]
