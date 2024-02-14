@@ -12,25 +12,37 @@ import NotFound from './Error/404'
 import Home from './teacher/home/home'
 import Courses from './teacher/courses/courses'
 import Profile from './teacher/profile/profile'
+import { useAppSelector } from './store/hooks'
+import Hb from './zbirthday/hb'
 
 const AppPrivateTeacher: React.FC = () => {
-  const items: MenuProps['items'] = [
-    {
-      label: <Link href='/'>Home</Link>,
-      icon: <AiOutlineHome />,
-      key: 'home'
-    },
-    {
-      label: <Link href='/courses'>Courses</Link>,
-      icon: <AiOutlineLaptop />,
-      key: 'courses'
-    },
-    {
-      label: <Link href='/profile'>Profile</Link>,
-      icon: <AiOutlineSetting />,
-      key: 'profile'
-    }
-  ]
+  const user = useAppSelector((state) => state.userSlice.user)
+
+  let items: MenuProps['items'] =
+    user?.username === 'Joan'
+      ? [
+          {
+            label: <Link href='/'>HAPPY BIRTHDAAAAYYYYYY !!!!</Link>,
+            key: 'hb'
+          }
+        ]
+      : [
+          {
+            label: <Link href='/'>Home</Link>,
+            icon: <AiOutlineHome />,
+            key: 'home'
+          },
+          {
+            label: <Link href='/courses'>Courses</Link>,
+            icon: <AiOutlineLaptop />,
+            key: 'courses'
+          },
+          {
+            label: <Link href='/profile'>Profile</Link>,
+            icon: <AiOutlineSetting />,
+            key: 'profile'
+          }
+        ]
 
   return (
     <Layout className='max-size'>
@@ -45,7 +57,11 @@ const AppPrivateTeacher: React.FC = () => {
       </Header>
       <Content className='content-app'>
         <Switch>
-          <Route path='/' component={Home} />
+          {user?.username === 'Joan' ? (
+            <Route path='/' component={Hb} />
+          ) : (
+            <Route path='/' component={Home} />
+          )}
           <Route path='/courses' component={Courses} />
           <Route path='/profile' component={Profile} />
           <Route component={NotFound} />

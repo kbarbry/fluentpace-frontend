@@ -53,6 +53,7 @@ const Courses: React.FC = () => {
         <Card
           key={index}
           className='course-container'
+          style={{ margin: '20px' }}
           cover={<img alt={course.title} src={course.profilePictureUrl} />}
           onClick={() => handleCardClick(course.id)}
         >
@@ -76,6 +77,7 @@ const Courses: React.FC = () => {
         <Card
           key={index}
           className='course-container completed'
+          style={{ margin: '20px' }}
           cover={<img alt={course.title} src={course.profilePictureUrl} />}
           extra={
             <Button onClick={() => handleRemoveCompletedCourse(course.id)}>

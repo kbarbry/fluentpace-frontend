@@ -93,7 +93,7 @@ const Course: React.FC = () => {
                   <VoiceRecorder
                     width='90%'
                     height='90%'
-                    downloadable={false}
+                    downloadable={true}
                     mainContainerStyle={{
                       boxShadow: 'none'
                     }}

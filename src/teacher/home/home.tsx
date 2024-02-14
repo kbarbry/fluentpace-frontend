@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../store/hooks'
+import ReactAudioPlayer from 'react-audio-player'
 
 const Home: React.FC = () => {
   const { t } = useTranslation()
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       {t('app.teacher.home.welcome', {
         name: user?.username
       })}
+      <ReactAudioPlayer src='audio.wav' controls />
     </>
   )
 }

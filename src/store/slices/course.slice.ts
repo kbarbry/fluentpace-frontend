@@ -13,14 +13,15 @@ interface IQuestion {
 }
 
 interface IAnswer {
+  id: number
   vocalUrl?: string
   text?: string
+  feedback?: string
 }
 
 interface IUserAnswer {
   username: string
   answers: IAnswer[]
-  feedbacks: string[]
 }
 
 interface ICourse {
@@ -30,6 +31,7 @@ interface ICourse {
   videoId: string
   creator: string
   time: number
+  nbrQuestion: number
   questions: IQuestion[]
   answers: IUserAnswer[]
 }
@@ -48,7 +50,41 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/TT-mum4QPcw/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      answers: [],
+      nbrQuestion: 3,
+      answers: [
+        {
+          username: 'Dhaya',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: "I don't know what to say brruuuuwww" }
+          ]
+        },
+        {
+          username: 'Benoit',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: 'Chupapi mouñaño' }
+          ]
+        },
+        {
+          username: 'Bertrand',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: "Let's get it dang" }
+          ]
+        },
+        {
+          username: 'Jean-Eudes',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: 'Bouwip' }
+          ]
+        }
+      ],
       questions: [
         { id: 1, type: EQuestionType.Vocal, title: 'What is he saying ?' },
         { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
@@ -63,6 +99,7 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/nT6Be1Bqfoc/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
+      nbrQuestion: 3,
       answers: [],
       questions: [
         { id: 1, type: EQuestionType.Vocal, title: 'I like coffee ?' },
@@ -78,7 +115,17 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/kCp4RYiezZc/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      answers: [],
+      nbrQuestion: 3,
+      answers: [
+        {
+          username: 'Benoit',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: 'Chupapi mouñaño' }
+          ]
+        }
+      ],
       questions: [
         { id: 1, type: EQuestionType.Vocal, title: 'Do you feel great ?' },
         { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
@@ -93,7 +140,25 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/neQHo0ckyUM/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      answers: [],
+      nbrQuestion: 3,
+      answers: [
+        {
+          username: 'Dhaya',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: "I don't know what to say brruuuuwww" }
+          ]
+        },
+        {
+          username: 'Benoit',
+          answers: [
+            { id: 1, vocalUrl: 'audio.wav' },
+            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 3, text: 'Chupapi mouñaño' }
+          ]
+        }
+      ],
       questions: [
         {
           id: 1,
@@ -112,6 +177,7 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/N6fE7ukKyd0/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
+      nbrQuestion: 3,
       answers: [],
       questions: [
         {

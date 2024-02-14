@@ -1,0 +1,33 @@
+.page-container {
+  height: 100%;
+  width: 100%;
+}
+
+.text-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.background-gift {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/heartBackground.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.card-gift {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  width: 100%;
+  background-color: rgba(144, 144, 144, 0.1);
+  backdrop-filter: blur(10px);
+}
