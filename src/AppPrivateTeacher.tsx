@@ -14,12 +14,13 @@ import Courses from './teacher/courses/courses'
 import Profile from './teacher/profile/profile'
 import { useAppSelector } from './store/hooks'
 import Hb from './zbirthday/hb'
+import Course from './teacher/courses/components/course'
 
 const AppPrivateTeacher: React.FC = () => {
   const user = useAppSelector((state) => state.userSlice.user)
 
   let items: MenuProps['items'] =
-    user?.username === 'Joan'
+    user?.username === 'JoanAndDhaya4Life'
       ? [
           {
             label: <Link href='/'>HAPPY BIRTHDAAAAYYYYYY !!!!</Link>,
@@ -57,12 +58,13 @@ const AppPrivateTeacher: React.FC = () => {
       </Header>
       <Content className='content-app'>
         <Switch>
-          {user?.username === 'Joan' ? (
+          {user?.username === 'JoanAndDhaya4Life' ? (
             <Route path='/' component={Hb} />
           ) : (
             <Route path='/' component={Home} />
           )}
           <Route path='/courses' component={Courses} />
+          <Route path='/courses/:id' component={Course} />
           <Route path='/profile' component={Profile} />
           <Route component={NotFound} />
         </Switch>

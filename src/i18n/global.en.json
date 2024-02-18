@@ -11,6 +11,7 @@
       "notification": {
         "success": {
           "courseSubmitted": "Course submitted",
+          "correctionSubmitted": "Correction submitted",
           "courseRemovedCompleted": "Course removed"
         }
       }
@@ -45,7 +46,24 @@
           "welcome": "Welcome {{name}} on the teacher part of the App where you can grade students !"
         },
         "courses": {
-          "title": "Courses"
+          "title": "Courses",
+          "available": "Corrections available:",
+          "completed": "Corrections done:",
+          "nothingCompleted": "No corrections available yet.",
+          "course": {
+            "resources": "Resources:",
+            "questions": "Answers from {{username}}:",
+            "feedback": "Feedback and correction:",
+            "modal": {
+              "leave": {
+                "title": "Leave Correction ?",
+                "message": "Are you sure you want to leave this correction? Your progress won't be save and you'll have to start it all over again."
+              }
+            },
+            "error": {
+              "notFound": "Correction not found."
+            }
+          }
         },
         "profile": {
           "title": "Profile",

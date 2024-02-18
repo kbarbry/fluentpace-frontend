@@ -1,0 +1,96 @@
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.badge-container {
+  transition: transform 0.5s ease;
+}
+
+.course-container {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  max-width: 450px;
+  overflow: hidden;
+}
+
+.course-container:hover {
+  transform: scale(1.01);
+}
+
+.badge-container:hover {
+  transform: scale(1.05);
+}
+
+.course-container.completed {
+  opacity: 0.6;
+  cursor: auto;
+}
+
+.course-container.completed:hover {
+  transform: none;
+}
+
+.course-section {
+  background-color: #2b2b2b;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.video-container {
+  transform: translate(50%);
+  width: 50%;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.recorder-container {
+  margin: 24px;
+  width: 60%;
+}
+
+@media (max-width: 900px) {
+  .video-container {
+    transform: translate(5%);
+    width: 90%;
+  }
+  .recorder-container {
+    width: 90%;
+    height: 100%;
+  }
+}
+
+.box-title-container {
+  margin: 0px;
+  margin-bottom: 16px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.questions-container {
+  border: 3px solid #242424;
+  border-radius: 15px;
+  margin: 16px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}

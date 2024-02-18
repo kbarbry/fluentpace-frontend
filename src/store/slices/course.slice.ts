@@ -20,6 +20,7 @@ interface IAnswer {
 }
 
 interface IUserAnswer {
+  id: string
   username: string
   answers: IAnswer[]
 }
@@ -53,34 +54,38 @@ const initialState: ICourseState = {
       nbrQuestion: 3,
       answers: [
         {
+          id: '340dB2aq5V4xBujOHOeu1',
           username: 'Dhaya',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio.wav' },
+            { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: "I don't know what to say brruuuuwww" }
           ]
         },
         {
+          id: '1qQZHsXNSvl262mMlw95Q',
           username: 'Benoit',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio.wav' },
+            { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: 'Chupapi mouñaño' }
           ]
         },
         {
+          id: 'cSDlXUKPSWpZRZPBTWUHm',
           username: 'Bertrand',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio.wav' },
+            { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: "Let's get it dang" }
           ]
         },
         {
+          id: 'IEHFll86x6rnJZbkoNwrV',
           username: 'Jean-Eudes',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio.wav' },
+            { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: 'Bouwip' }
           ]
         }
@@ -118,10 +123,11 @@ const initialState: ICourseState = {
       nbrQuestion: 3,
       answers: [
         {
+          id: 'cSDlXUKPSWpZRZPBTWUHm',
           username: 'Benoit',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio2.mp3' },
+            { id: 2, vocalUrl: '/audio2.mp3' },
             { id: 3, text: 'Chupapi mouñaño' }
           ]
         }
@@ -143,18 +149,20 @@ const initialState: ICourseState = {
       nbrQuestion: 3,
       answers: [
         {
+          id: '1qQZHsXNSvl262mMlw95Q',
           username: 'Dhaya',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio.wav' },
+            { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: "I don't know what to say brruuuuwww" }
           ]
         },
         {
+          id: 'cEAxgR6x5b0P8MdkvnHtU',
           username: 'Benoit',
           answers: [
-            { id: 1, vocalUrl: 'audio.wav' },
-            { id: 2, vocalUrl: 'audio.wav' },
+            { id: 1, vocalUrl: '/audio.wav' },
+            { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: 'Chupapi mouñaño' }
           ]
         }

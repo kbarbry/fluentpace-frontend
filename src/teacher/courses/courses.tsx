@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAppSelector } from '../../store/hooks'
-import { Badge, Card, Divider, Typography } from 'antd'
+import { Badge, Card, Divider, Modal, Typography } from 'antd'
 import Meta from 'antd/es/card/Meta'
 import { useLocation } from 'wouter'
+import './courses.css'
 
 const { Title } = Typography
 
 const Courses: React.FC = () => {
   const [, setLocation] = useLocation()
   const { t } = useTranslation()
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
+  const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null)
+  const [selectedCorrectionId, setSelectedCorrectionId] = useState<
+    string | null
+  >(null)
   const courses = useAppSelector((state) => state.courseSlice.courses)
 
   const coursesCorrection = courses.filter(
@@ -20,23 +26,43 @@ const Courses: React.FC = () => {
   )
 
   const handleCardClick = (courseId: string) => {
-    setLocation(`/courses/${courseId}`)
+    setSelectedCourseId(courseId)
+    const selectedCourse = courses.find((course) => course.id === courseId)
+    if (selectedCourse && selectedCourse.answers.length > 0) {
+      const randomIndex = Math.floor(
+        Math.random() * selectedCourse.answers.length
+      )
+      setSelectedCorrectionId(selectedCourse.answers[randomIndex].id)
+      setModalVisible(true)
+    }
+  }
+
+  const handleModalConfirm = () => {
+    if (selectedCourseId && selectedCorrectionId) {
+      setLocation(`/courses/${selectedCourseId}+${selectedCorrectionId}`)
+    }
+    setModalVisible(false)
+  }
+
+  const handleModalCancel = () => {
+    setSelectedCourseId(null)
+    setSelectedCorrectionId(null)
+    setModalVisible(false)
   }
 
   return (
     <div className='courses-container unselectable'>
       <Title level={4} className='box-title-container'>
-        {t('app.student.courses.available')}
+        {t('app.teacher.courses.available')}
       </Title>
       <Divider type='horizontal' />
       {coursesCorrection.length === 0 && (
-        <>{t('app.student.courses.nothingCompleted')}</>
+        <>{t('app.teacher.courses.nothingCompleted')}</>
       )}
       {coursesCorrection.map((course, index) => (
-        <div style={{ margin: '20px' }}>
-          <Badge count={course.answers.length}>
+        <div key={index} style={{ margin: '20px' }}>
+          <Badge className='badge-container' count={course.answers.length}>
             <Card
-              key={index}
               className='course-container'
               cover={<img alt={course.title} src={course.profilePictureUrl} />}
               onClick={() => handleCardClick(course.id)}
@@ -52,11 +78,11 @@ const Courses: React.FC = () => {
 
       <Divider type='horizontal' />
       <Title level={4} className='box-title-container'>
-        {t('app.student.courses.completed')}
+        {t('app.teacher.courses.completed')}
       </Title>
       <Divider type='horizontal' />
       {coursesNoCorrection.length === 0 && (
-        <>{t('app.student.courses.nothingCompleted')}</>
+        <>{t('app.teacher.courses.nothingCompleted')}</>
       )}
 
       {coursesNoCorrection.map((course, index) => (
@@ -72,6 +98,20 @@ const Courses: React.FC = () => {
           />
         </Card>
       ))}
+
+      <Modal
+        title='Privacy Warning'
+        open={modalVisible}
+        onOk={handleModalConfirm}
+        onCancel={handleModalCancel}
+      >
+        <p>
+          By proceeding, you acknowledge that you are about to access a random
+          student's work. Please ensure to respect the privacy and
+          confidentiality of this content. Avoid sharing any information or
+          documents obtained from this correction session.
+        </p>
+      </Modal>
     </div>
   )
 }

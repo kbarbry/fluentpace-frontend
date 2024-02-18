@@ -12,7 +12,6 @@ const Home: React.FC = () => {
       {t('app.teacher.home.welcome', {
         name: user?.username
       })}
-      <ReactAudioPlayer src='audio.wav' controls />
     </>
   )
 }
