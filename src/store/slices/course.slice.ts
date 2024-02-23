@@ -106,6 +106,11 @@ const initialState: ICourseState = {
           type: EQuestionType.Text,
           title:
             'What is the destination they talked about at the beginning of the dialog ?'
+        },
+        {
+          id: 4,
+          type: EQuestionType.Text,
+          title: 'What is another way they described a really long line ?'
         }
       ]
     },
@@ -252,10 +257,27 @@ const initialState: ICourseState = {
         {
           id: 1,
           type: EQuestionType.Vocal,
-          title: "What's this shitty accent ?"
+          title:
+            'Can you repeat the first group of text shadowed in the video ?'
         },
-        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
-        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
+        {
+          id: 2,
+          type: EQuestionType.Vocal,
+          title:
+            'Can you repeat the second group of text shadowed in the video ?'
+        },
+        {
+          id: 3,
+          type: EQuestionType.Vocal,
+          title:
+            'Can you repeat the third group of text shadowed in the video ?'
+        },
+        {
+          id: 4,
+          type: EQuestionType.Vocal,
+          title:
+            'Can you repeat the fourth group of text shadowed in the video ?'
+        }
       ]
     }
   ]
