@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 
 const { Title } = Typography
 
-const NotificationsCenter: React.FC = () => {
+const RecentUpdates: React.FC = () => {
   const { t } = useTranslation()
 
   return (
@@ -20,15 +20,15 @@ const NotificationsCenter: React.FC = () => {
       className='s-home-card'
     >
       <Title level={4} className='box-title-container'>
-        {t('app.student.home.notifications')}
+        {t('app.teacher.home.updates')}
       </Title>
       <Divider type='horizontal' />
       <Empty
         className='s-empty-container'
-        description={t('app.student.home.empty.notifications')}
+        description={t('app.teacher.home.empty.updates')}
       />
     </Card>
   )
 }
 
-export default NotificationsCenter
+export default RecentUpdates

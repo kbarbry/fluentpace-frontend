@@ -1,11 +1,14 @@
-import { Card, Divider, Typography } from 'antd'
+import { Card, Divider, Empty, Typography } from 'antd'
 import React from 'react'
 
 import '../home.css'
+import { useTranslation } from 'react-i18next'
 
 const { Title } = Typography
 
 const RecentUpdates: React.FC = () => {
+  const { t } = useTranslation()
+
   return (
     <Card
       style={{
@@ -17,48 +20,13 @@ const RecentUpdates: React.FC = () => {
       className='s-home-card'
     >
       <Title level={4} className='box-title-container'>
-        Recent updates
+        {t('app.student.home.updates')}
       </Title>
       <Divider type='horizontal' />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <p>End 2</p>
+      <Empty
+        className='s-empty-container'
+        description={t('app.student.home.empty.updates')}
+      />
     </Card>
   )
 }

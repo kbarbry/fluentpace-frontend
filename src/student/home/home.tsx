@@ -13,11 +13,7 @@ const Home: React.FC = () => {
   const user = useAppSelector((state) => state.userSlice.user)
 
   return (
-    <Space
-      direction='vertical'
-      style={{ width: '100%', height: '100%' }}
-      className='student-typewriter'
-    >
+    <Space direction='vertical' style={{ width: '100%', height: '100%' }}>
       <Title
         level={2}
         style={{

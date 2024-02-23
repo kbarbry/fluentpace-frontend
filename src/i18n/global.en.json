@@ -43,7 +43,13 @@
       "teacher": {
         "home": {
           "title": "Home",
-          "welcome": "Welcome {{name}} on the teacher part of the App where you can grade students !"
+          "welcome": "Welcome to teachers side of FluentPace {{name}}!",
+          "updates": "Recent updates",
+          "notifications": "Notification center",
+          "empty": {
+            "updates": "No rencent update yet.",
+            "notifications": "No notifications yet."
+          }
         },
         "courses": {
           "title": "Courses",
@@ -73,7 +79,13 @@
       "student": {
         "home": {
           "title": "Home",
-          "welcome": "Welcome to FluentPace {{name}}!"
+          "welcome": "Welcome to students side of FluentPace {{name}}!",
+          "updates": "Recent updates",
+          "notifications": "Notification center",
+          "empty": {
+            "updates": "No rencent update yet.",
+            "notifications": "No notifications yet."
+          }
         },
         "courses": {
           "title": "Courses",

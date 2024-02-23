@@ -20,12 +20,12 @@ const NotificationsCenter: React.FC = () => {
       className='s-home-card'
     >
       <Title level={4} className='box-title-container'>
-        {t('app.student.home.notifications')}
+        {t('app.teacher.home.notifications')}
       </Title>
       <Divider type='horizontal' />
       <Empty
         className='s-empty-container'
-        description={t('app.student.home.empty.notifications')}
+        description={t('app.teacher.home.empty.notifications')}
       />
     </Card>
   )

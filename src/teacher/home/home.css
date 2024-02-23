@@ -1,15 +1,15 @@
-.s-home-card {
+.t-home-card {
   width: 40%;
   height: 700px;
 }
 
 @media (max-width: 750px) {
-  .s-home-card {
+  .t-home-card {
     width: 90%;
   }
 }
 
-.s-empty-container {
+.t-empty-container {
   display: flex;
   height: 300px;
   flex-direction: column;

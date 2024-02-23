@@ -89,9 +89,24 @@ const initialState: ICourseState = {
         }
       ],
       questions: [
-        { id: 1, type: EQuestionType.Vocal, title: 'What is he saying ?' },
-        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
-        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
+        {
+          id: 1,
+
+          type: EQuestionType.Vocal,
+          title: 'What is the first word of the vocabulary presented ?'
+        },
+        {
+          id: 2,
+          type: EQuestionType.Vocal,
+          title:
+            'Can you describe a situation where you can use the phrase there is no way ?'
+        },
+        {
+          id: 3,
+          type: EQuestionType.Text,
+          title:
+            'What is the destination they talked about at the beginning of the dialog ?'
+        }
       ]
     },
     {
@@ -151,7 +166,12 @@ const initialState: ICourseState = {
           type: EQuestionType.Vocal,
           title: 'What are the words from the vocabulary section ?'
         },
-        { id: 2, type: EQuestionType.Vocal, title: ' ?' },
+        {
+          id: 2,
+          type: EQuestionType.Vocal,
+          title:
+            'When you go to the doctor and he sends you some medicine he writes out a ?'
+        },
         {
           id: 3,
           type: EQuestionType.Text,
