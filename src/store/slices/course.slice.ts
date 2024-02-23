@@ -156,7 +156,10 @@ const initialState: ICourseState = {
           answers: [
             { id: 1, vocalUrl: '/audio2.mp3' },
             { id: 2, vocalUrl: '/audio2.mp3' },
-            { id: 3, text: 'Chupapi mouñaño' }
+            {
+              id: 3,
+              text: 'Chupapi mouñaño It is working yes you pushed the work'
+            }
           ]
         }
       ],
