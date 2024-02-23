@@ -1,0 +1,9 @@
+.s-home-card {
+  width: 40%;
+}
+
+@media (max-width: 750px) {
+  .s-home-card {
+    width: 90%;
+  }
+}

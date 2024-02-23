@@ -32,7 +32,6 @@ interface ICourse {
   videoId: string
   creator: string
   time: number
-  nbrQuestion: number
   questions: IQuestion[]
   answers: IUserAnswer[]
 }
@@ -51,7 +50,6 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/TT-mum4QPcw/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      nbrQuestion: 3,
       answers: [
         {
           id: '340dB2aq5V4xBujOHOeu1',
@@ -104,23 +102,38 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/nT6Be1Bqfoc/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      nbrQuestion: 3,
       answers: [],
       questions: [
-        { id: 1, type: EQuestionType.Vocal, title: 'I like coffee ?' },
-        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
-        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
+        {
+          id: 1,
+          type: EQuestionType.Vocal,
+          title: 'What could the first speaker buy with $0.10 cents ?'
+        },
+        {
+          id: 2,
+          type: EQuestionType.Vocal,
+          title: 'What is an "Ice-lolly" called in the UK ?'
+        },
+        {
+          id: 3,
+          type: EQuestionType.Text,
+          title:
+            'What did the third speaker translate the term "vendedor ambulante" to in English ?'
+        },
+        {
+          id: 4,
+          type: EQuestionType.Text,
+          title: 'What do they describe to be the meaning of "laced with" ?'
+        }
       ]
     },
     {
       id: 'neAmiXLERqRyL0vvbSFFw0_1CsOHHrC',
-      title: 'SHADOWING English Speaking Practice: talking about marriage',
-      videoId: 'kCp4RYiezZc',
-      profilePictureUrl:
-        'https://i3.ytimg.com/vi/kCp4RYiezZc/maxresdefault.jpg',
+      title: 'Going to the Eye Doctor - English Practice',
+      videoId: 'XL89DkNEqEs',
+      profilePictureUrl: 'https://img.youtube.com/vi/XL89DkNEqEs/hqdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      nbrQuestion: 3,
       answers: [
         {
           id: 'cSDlXUKPSWpZRZPBTWUHm',
@@ -133,9 +146,23 @@ const initialState: ICourseState = {
         }
       ],
       questions: [
-        { id: 1, type: EQuestionType.Vocal, title: 'Do you feel great ?' },
-        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
-        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
+        {
+          id: 1,
+          type: EQuestionType.Vocal,
+          title: 'What are the words from the vocabulary section ?'
+        },
+        { id: 2, type: EQuestionType.Vocal, title: ' ?' },
+        {
+          id: 3,
+          type: EQuestionType.Text,
+          title: 'What does "struggle" mean?'
+        },
+        {
+          id: 4,
+          type: EQuestionType.Text,
+          title:
+            'If you are far sighted you can see things that are close or far ?'
+        }
       ]
     },
     {
@@ -146,7 +173,6 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/neQHo0ckyUM/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      nbrQuestion: 3,
       answers: [
         {
           id: '1qQZHsXNSvl262mMlw95Q',
@@ -171,10 +197,23 @@ const initialState: ICourseState = {
         {
           id: 1,
           type: EQuestionType.Vocal,
-          title: 'How you slept this night ?'
+          title: 'Can you say "but I didn\'t" again ?'
         },
-        { id: 2, type: EQuestionType.Vocal, title: 'Blabla question 2 ?' },
-        { id: 3, type: EQuestionType.Text, title: 'Blabla question 3 ?' }
+        {
+          id: 2,
+          type: EQuestionType.Vocal,
+          title: 'How did Ana de Armas learn English ?'
+        },
+        {
+          id: 3,
+          type: EQuestionType.Vocal,
+          title: 'Can you say "How to audition" again ?'
+        },
+        {
+          id: 3,
+          type: EQuestionType.Vocal,
+          title: 'Can you say "literally" again ?'
+        }
       ]
     },
     {
@@ -185,7 +224,6 @@ const initialState: ICourseState = {
         'https://i3.ytimg.com/vi/N6fE7ukKyd0/maxresdefault.jpg',
       creator: 'Dhaya',
       time: 60,
-      nbrQuestion: 3,
       answers: [],
       questions: [
         {

@@ -73,7 +73,7 @@
       "student": {
         "home": {
           "title": "Home",
-          "welcome": "Welcome {{name}} on the student part of the app where you can select courses, make them and a teacher will grade them for you!"
+          "welcome": "Welcome to FluentPace {{name}}!"
         },
         "courses": {
           "title": "Courses",
