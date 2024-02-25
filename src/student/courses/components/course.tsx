@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { Typography, Button, Modal, Space, Divider, Card } from 'antd'
-//@ts-ignore
-import { VoiceRecorder } from 'react-voice-recorder-player'
 import { useLocation, useParams } from 'wouter'
 import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import { useTranslation } from 'react-i18next'
