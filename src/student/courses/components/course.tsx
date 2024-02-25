@@ -9,6 +9,7 @@ import { MessageSuccess } from '../../../notifications/messageSuccess'
 import { addCourseCompleted } from '../../../store/slices/user.slice'
 import { EQuestionType } from '../../../store/slices/course.slice'
 import { Input } from 'antd'
+import { AudioRecorder } from 'react-audio-voice-recorder'
 
 const { TextArea } = Input
 const { Title } = Typography
@@ -61,48 +62,40 @@ const Course: React.FC = () => {
       </Space>
       <Divider type='horizontal' />
       <Space direction='vertical' className='max-size'>
-        <Card className='course-section'>
-          <Title level={4} className='box-title-container'>
+        <Card className='s-course-section'>
+          <Title level={4} className='s-box-title-container'>
             {t('app.student.courses.course.resources')}
           </Title>
           <Divider type='horizontal' />
-          <div className='video-container unselectable'>
+          <div className='s-video-container unselectable'>
             <div className='iframe-container'>
               <iframe
                 src={`https://www.youtube.com/embed/${course.videoId}`}
                 title={`${course.title}`}
-                className='responsive-iframe'
+                className='s-responsive-iframe'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 allowFullScreen
               ></iframe>
             </div>
           </div>
         </Card>
-        <Card className='course-section'>
-          <Title level={4} className='box-title-container'>
+        <Card className='s-course-section'>
+          <Title level={4} className='s-box-title-container'>
             {t('app.student.courses.course.questions')}
           </Title>
           <Divider type='horizontal' />
           {course.questions.map((question, index) => (
-            <div className='questions-container' key={index}>
+            <div className='s-questions-container' key={index}>
               <Title level={5} style={{ margin: '0px' }}>
                 {index + 1}. {question.title}
               </Title>
               {question.type === EQuestionType.Vocal ? (
-                <div className='recorder-container'>
-                  <VoiceRecorder
-                    width='90%'
-                    height='90%'
-                    downloadable={true}
-                    mainContainerStyle={{
-                      boxShadow: 'none'
-                    }}
-                    controllerContainerStyle={{ backgroundColor: '#4a4a4a' }}
-                  />
+                <div className='s-recorder-container'>
+                  <AudioRecorder downloadOnSavePress />
                 </div>
               ) : (
                 <TextArea
-                  className='recorder-container'
+                  className='s-text-container'
                   rows={4}
                   maxLength={2000}
                   showCount

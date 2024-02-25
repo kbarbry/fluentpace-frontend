@@ -77,15 +77,6 @@ const initialState: ICourseState = {
             { id: 2, vocalUrl: '/audio.wav' },
             { id: 3, text: "Let's get it dang" }
           ]
-        },
-        {
-          id: 'IEHFll86x6rnJZbkoNwrV',
-          username: 'Jean-Eudes',
-          answers: [
-            { id: 1, vocalUrl: '/audio.wav' },
-            { id: 2, vocalUrl: '/audio.wav' },
-            { id: 3, text: 'Bouwip' }
-          ]
         }
       ],
       questions: [
@@ -151,7 +142,7 @@ const initialState: ICourseState = {
       id: 'neAmiXLERqRyL0vvbSFFw0_1CsOHHrC',
       title: 'Going to the Eye Doctor - English Practice',
       videoId: 'XL89DkNEqEs',
-      profilePictureUrl: 'https://img.youtube.com/vi/XL89DkNEqEs/hqdefault.jpg',
+      profilePictureUrl: '/courseEyeDoctor.jpg',
       creator: 'Dhaya',
       time: 60,
       answers: [

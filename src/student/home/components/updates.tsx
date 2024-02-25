@@ -1,4 +1,4 @@
-import { Card, Divider, Empty, Typography } from 'antd'
+import { Card, Divider, Timeline, Typography } from 'antd'
 import React from 'react'
 
 import '../home.css'
@@ -8,6 +8,38 @@ const { Title } = Typography
 
 const RecentUpdates: React.FC = () => {
   const { t } = useTranslation()
+  const items = [
+    {
+      label: '2024-01-16',
+      children: 'Beginning of Fluentpace',
+      color: 'green'
+    },
+    {
+      label: '2024-01-25',
+      children: 'Fluentpace online!',
+      color: 'green'
+    },
+    {
+      label: '2024-02-01',
+      children: 'Course mode for students',
+      color: 'green'
+    },
+    {
+      label: '2024-02-16',
+      children: 'Correction mode for teachers',
+      color: 'green'
+    },
+    {
+      label: '2024-02-24',
+      children: 'Mobile version',
+      color: 'green'
+    },
+    {
+      label: 'Coming soon...',
+      children: 'Profile page',
+      color: 'grey'
+    }
+  ]
 
   return (
     <Card
@@ -23,9 +55,11 @@ const RecentUpdates: React.FC = () => {
         {t('app.student.home.updates')}
       </Title>
       <Divider type='horizontal' />
-      <Empty
-        className='s-empty-container'
-        description={t('app.student.home.empty.updates')}
+      <Timeline
+        style={{ transform: 'translateX(-10%)', marginTop: '48px' }}
+        mode='left'
+        items={items}
+        reverse
       />
     </Card>
   )
