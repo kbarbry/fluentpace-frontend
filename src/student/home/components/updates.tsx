@@ -10,27 +10,27 @@ const RecentUpdates: React.FC = () => {
   const { t } = useTranslation()
   const items = [
     {
-      label: '2024-01-16',
+      label: '2023-10-16',
       children: 'Beginning of Fluentpace',
       color: 'green'
     },
     {
-      label: '2024-01-25',
+      label: '2023-11-25',
       children: 'Fluentpace online!',
       color: 'green'
     },
     {
-      label: '2024-02-01',
+      label: '2023-12-22',
       children: 'Course mode for students',
       color: 'green'
     },
     {
-      label: '2024-02-16',
+      label: '2024-01-13',
       children: 'Correction mode for teachers',
       color: 'green'
     },
     {
-      label: '2024-02-24',
+      label: '2024-02-14',
       children: 'Mobile version',
       color: 'green'
     },

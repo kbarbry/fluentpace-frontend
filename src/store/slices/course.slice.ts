@@ -44,45 +44,47 @@ const initialState: ICourseState = {
   courses: [
     {
       id: 'd8iI7KCnnfWDyPrndXqzadTkXeIX3jA',
-      title: 'Learn English with podcast conversation',
+      title: 'Learn English - Conversation S1E1',
       videoId: 'TT-mum4QPcw',
       profilePictureUrl:
         'https://i3.ytimg.com/vi/TT-mum4QPcw/maxresdefault.jpg',
-      creator: 'Dhaya',
-      time: 60,
+      creator: 'Joselin',
+      time: 30,
       answers: [
         {
           id: '340dB2aq5V4xBujOHOeu1',
-          username: 'Dhaya',
+          username: 'Joselin',
           answers: [
-            { id: 1, vocalUrl: '/audio.wav' },
-            { id: 2, vocalUrl: '/audio.wav' },
-            { id: 3, text: "I don't know what to say brruuuuwww" }
+            { id: 1, vocalUrl: '/TT-mum4QPcw_Joan_1.wav' },
+            { id: 2, vocalUrl: '/TT-mum4QPcw_Joan_2.wav' },
+            { id: 3, text: 'The destination they talked about is New-York' },
+            { id: 4, text: 'A mile long line' }
           ]
         },
         {
           id: '1qQZHsXNSvl262mMlw95Q',
-          username: 'Benoit',
+          username: 'Melina',
           answers: [
-            { id: 1, vocalUrl: '/audio.wav' },
-            { id: 2, vocalUrl: '/audio.wav' },
-            { id: 3, text: 'Chupapi mouñaño' }
+            { id: 1, vocalUrl: '/TT-mum4QPcw_Joan_1.wav' },
+            { id: 2, vocalUrl: '/TT-mum4QPcw_Joan_2.wav' },
+            { id: 3, text: "It's Hawai" },
+            { id: 4, text: 'A long line' }
           ]
         },
         {
           id: 'cSDlXUKPSWpZRZPBTWUHm',
-          username: 'Bertrand',
+          username: 'Dhaya',
           answers: [
-            { id: 1, vocalUrl: '/audio.wav' },
-            { id: 2, vocalUrl: '/audio.wav' },
-            { id: 3, text: "Let's get it dang" }
+            { id: 1, vocalUrl: '/TT-mum4QPcw_Joan_1.wav' },
+            { id: 2, vocalUrl: '/TT-mum4QPcw_Joan_2.wav' },
+            { id: 3, text: 'They are going in a golf course in Hawaï' },
+            { id: 4, text: 'Mile long' }
           ]
         }
       ],
       questions: [
         {
           id: 1,
-
           type: EQuestionType.Vocal,
           title: 'What is the first word of the vocabulary presented ?'
         },
@@ -107,12 +109,12 @@ const initialState: ICourseState = {
     },
     {
       id: 'k4EaAuU6Hvp4B5oxBqfxZ28MjqnaFV1',
-      title: 'Learn English with PODCASTS',
+      title: 'Learn English - When I was younger',
       videoId: 'nT6Be1Bqfoc',
       profilePictureUrl:
         'https://i3.ytimg.com/vi/nT6Be1Bqfoc/maxresdefault.jpg',
-      creator: 'Dhaya',
-      time: 60,
+      creator: 'Joselin',
+      time: 30,
       answers: [],
       questions: [
         {
@@ -140,21 +142,25 @@ const initialState: ICourseState = {
     },
     {
       id: 'neAmiXLERqRyL0vvbSFFw0_1CsOHHrC',
-      title: 'Going to the Eye Doctor - English Practice',
+      title: 'Learn English - Going to the Eye Doctor',
       videoId: 'XL89DkNEqEs',
       profilePictureUrl: '/courseEyeDoctor.jpg',
-      creator: 'Dhaya',
-      time: 60,
+      creator: 'Joselin',
+      time: 30,
       answers: [
         {
           id: 'cSDlXUKPSWpZRZPBTWUHm',
-          username: 'Benoit',
+          username: 'Joselin',
           answers: [
-            { id: 1, vocalUrl: '/audio2.mp3' },
-            { id: 2, vocalUrl: '/audio2.mp3' },
+            { id: 1, vocalUrl: '/XL89DkNEqEs_Joan_1.wav' },
+            { id: 2, vocalUrl: '/XL89DkNEqEs_Joan_2.wav' },
             {
               id: 3,
-              text: 'Chupapi mouñaño It is working yes you pushed the work'
+              text: "Struggle means that it's difficult and it's hard to achieve something"
+            },
+            {
+              id: 4,
+              text: 'It means that you can see things that are far'
             }
           ]
         }
@@ -169,7 +175,7 @@ const initialState: ICourseState = {
           id: 2,
           type: EQuestionType.Vocal,
           title:
-            'When you go to the doctor and he sends you some medicine he writes out a ?'
+            'When you go to the doctor and he sends you some medicine he writes out a ......... ?'
         },
         {
           id: 3,
@@ -186,29 +192,31 @@ const initialState: ICourseState = {
     },
     {
       id: 'KMNZ6djm9vY2ItNNdtQJXFBtTHQmBbD',
-      title: 'Shadowing English Practice with Ana de Armas',
+      title: 'Shadowing - Practice with Ana de Armas',
       videoId: 'neQHo0ckyUM',
       profilePictureUrl:
         'https://i3.ytimg.com/vi/neQHo0ckyUM/maxresdefault.jpg',
-      creator: 'Dhaya',
-      time: 60,
+      creator: 'Joselin',
+      time: 30,
       answers: [
         {
           id: '1qQZHsXNSvl262mMlw95Q',
-          username: 'Dhaya',
+          username: 'Joselin',
           answers: [
-            { id: 1, vocalUrl: '/audio.wav' },
-            { id: 2, vocalUrl: '/audio.wav' },
-            { id: 3, text: "I don't know what to say brruuuuwww" }
+            { id: 1, vocalUrl: '/neQHo0ckyUM_Joan_1.wav' },
+            { id: 2, vocalUrl: '/neQHo0ckyUM_Joan_2.wav' },
+            { id: 3, vocalUrl: '/neQHo0ckyUM_Joan_3.wav' },
+            { id: 3, vocalUrl: '/neQHo0ckyUM_Joan_4.wav' }
           ]
         },
         {
           id: 'cEAxgR6x5b0P8MdkvnHtU',
-          username: 'Benoit',
+          username: 'Melina',
           answers: [
-            { id: 1, vocalUrl: '/audio.wav' },
-            { id: 2, vocalUrl: '/audio.wav' },
-            { id: 3, text: 'Chupapi mouñaño' }
+            { id: 1, vocalUrl: '/neQHo0ckyUM_Joan_1.wav' },
+            { id: 2, vocalUrl: '/neQHo0ckyUM_Joan_2.wav' },
+            { id: 3, vocalUrl: '/neQHo0ckyUM_Joan_3.wav' },
+            { id: 3, vocalUrl: '/neQHo0ckyUM_Joan_4.wav' }
           ]
         }
       ],
@@ -237,12 +245,12 @@ const initialState: ICourseState = {
     },
     {
       id: 'aOarHasWqpjQ_BpCA_GbybllvT3Q75L',
-      title: 'Shadowing: Repeat-After-Me',
+      title: 'Shadowing - Repeat-After-Me',
       videoId: 'N6fE7ukKyd0',
       profilePictureUrl:
         'https://i3.ytimg.com/vi/N6fE7ukKyd0/maxresdefault.jpg',
-      creator: 'Dhaya',
-      time: 60,
+      creator: 'Joselin',
+      time: 30,
       answers: [],
       questions: [
         {

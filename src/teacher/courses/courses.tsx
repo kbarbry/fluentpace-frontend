@@ -69,7 +69,7 @@ const Courses: React.FC = () => {
             >
               <Meta
                 title={course.title}
-                description={`Creator: ${course.creator}  Time: ${course.time} hours`}
+                description={`Creator: ${course.creator}  Time: ${course.time} min`}
               />
             </Card>
           </Badge>
@@ -94,7 +94,7 @@ const Courses: React.FC = () => {
         >
           <Meta
             title={course.title}
-            description={`Creator: ${course.creator}  Time: ${course.time} hours`}
+            description={`Creator: ${course.creator}  Time: ${course.time} min`}
           />
         </Card>
       ))}
