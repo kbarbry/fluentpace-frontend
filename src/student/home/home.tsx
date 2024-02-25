@@ -31,6 +31,20 @@ const Home: React.FC = () => {
 
       <Divider style={{ height: '10px', margin: '0px', marginTop: '10px' }} />
 
+      <p
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          textAlign: 'center',
+          fontSize: '18px',
+          lineHeight: '1.6'
+        }}
+      >
+        {t('global.introduction')}
+      </p>
+
+      <Divider style={{ height: '10px', margin: '0px', marginTop: '10px' }} />
+
       <div
         style={{
           display: 'flex',

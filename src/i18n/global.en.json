@@ -1,6 +1,7 @@
 {
   "translation": {
     "global": {
+      "introduction": "Welcome to Fluentpace, the idea of this website was born out of  our need to showcase how an English learning platform could be modern, innovative, and easy to access. It is obviously not fully functional yet, it has some flaws here and there that we're constantly working on and trying to improve. We developed this page taking ideas we had throughout the development of our thesis. This project is tailored to language learning enthusiasts, our activities are centered around the proven Shadowing Technique, giving us the opportunity to offer an immersive learning experience. Whether you're a beginner or advanced learner, FluentPace's organized ans user-friendly approach ensures the user's seamless journey to proficiency. The content showcased is directed towards anyone eager to enhance their English fluency. Aligned with established curricular standards, our activities are versatile and crafted towards the benefit of the user so they can be effortlessly integrated into existing language learning programs. So join us on this exciting linguistic adventure and let FluentPace be your guide to mastering English through the innovative art of Shadowing!",
       "button": {
         "back": "Back",
         "yes": "Yes",
@@ -43,7 +44,7 @@
       "teacher": {
         "home": {
           "title": "Home",
-          "welcome": "Welcome to teachers side of FluentPace {{name}}!",
+          "welcome": "Welcome to FluentPace {{name}}! (Teacher side)",
           "updates": "Recent updates",
           "notifications": "Notification center",
           "empty": {
@@ -79,7 +80,7 @@
       "student": {
         "home": {
           "title": "Home",
-          "welcome": "Welcome to students side of FluentPace {{name}}!",
+          "welcome": "Welcome to FluentPace {{name}}! (Student side)",
           "updates": "Recent updates",
           "notifications": "Notification center",
           "empty": {
